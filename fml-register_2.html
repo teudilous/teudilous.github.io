@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Mutual Life – Register with Teudilous Shoko</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;500;600;700&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --red:#C8102E;--dark-red:#9B0B22;--black:#111111;--charcoal:#1E1E1E;
+  --off-white:#F5F4F0;--white:#ffffff;--mid:#E2E0DB;--green:#22c55e;
+  --gold:#C9A84C;--text:#2a2a2a;--muted:#6b6b6b;
+  --shadow:0 4px 32px rgba(0,0,0,.1);
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--off-white);color:var(--text);font-size:15px;line-height:1.5}
+
+/* ── HEADER ─────────────────────────────────────── */
+header{
+  background:var(--black);
+  position:sticky;top:0;z-index:300;
+  border-bottom:3px solid var(--red);
+  box-shadow:0 2px 20px rgba(0,0,0,.5)
+}
+.header-inner{
+  max-width:1080px;margin:0 auto;
+  padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap
+}
+/* Logo */
+.logo-wrap{display:flex;align-items:center;gap:14px}
+.fml-logo{display:flex;flex-direction:column;align-items:flex-start;line-height:1}
+.fml-logo .brand{
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:900;font-size:20px;
+  color:var(--white);letter-spacing:.5px
+}
+.fml-logo .assurance{
+  font-size:9px;font-weight:700;letter-spacing:3px;
+  color:var(--red);text-transform:uppercase;margin-top:1px
+}
+.fml-logo .tagline{font-size:9px;color:#888;font-style:italic;margin-top:2px}
+
+/* Agent pill */
+.agent-pill{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:40px;padding:8px 16px
+}
+.agent-pill .ap-name{font-weight:700;font-size:13px;color:var(--white)}
+.agent-pill .ap-phone{font-size:12px;color:#22c55e;font-weight:600}
+.agent-pill .ap-flag{font-size:18px}
+
+/* ── HERO ────────────────────────────────────────── */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#0f0f0f 0%,#1a0408 50%,#0f0f0f 100%);
+  min-height:520px;
+  display:flex;align-items:center
+}
+.hero-bg-pattern{
+  position:absolute;inset:0;
+  background-image:radial-gradient(circle at 20% 50%, rgba(200,16,46,.08) 0%, transparent 50%),
+                   radial-gradient(circle at 80% 20%, rgba(200,16,46,.05) 0%, transparent 40%);
+  pointer-events:none
+}
+.hero-content{
+  max-width:1080px;margin:0 auto;
+  padding:60px 24px;
+  display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%
+}
+.hero-text .eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(200,16,46,.15);
+  border:1px solid rgba(200,16,46,.3);
+  border-radius:20px;padding:5px 14px;
+  font-size:11px;font-weight:700;letter-spacing:2px;
+  color:var(--red);text-transform:uppercase;margin-bottom:20px
+}
+.hero-text h1{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:clamp(32px,4vw,52px);
+  font-weight:900;line-height:1.1;
+  color:var(--white);margin-bottom:20px
+}
+.hero-text h1 em{color:var(--red);font-style:normal}
+.hero-text p{
+  font-size:15px;color:rgba(255,255,255,.65);
+  line-height:1.7;margin-bottom:28px;max-width:440px
+}
+.hero-cta-row{display:flex;gap:12px;flex-wrap:wrap}
+.btn-primary{
+  background:var(--red);color:var(--white);border:none;
+  border-radius:8px;padding:14px 28px;
+  font-size:15px;font-weight:700;cursor:pointer;
+  font-family:inherit;text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  transition:background .2s,transform .15s;letter-spacing:.3px
+}
+.btn-primary:hover{background:var(--dark-red);transform:translateY(-1px)}
+.btn-outline{
+  background:transparent;color:var(--white);
+  border:2px solid rgba(255,255,255,.2);
+  border-radius:8px;padding:14px 24px;
+  font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;
+  text-decoration:none;display:inline-flex;align-items:center;gap:8px;
+  transition:border-color .2s,background .2s;
+  href:"tel:+263779540326"
+}
+.btn-outline:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05)}
+
+/* Trust stats below headline */
+.trust-stats{
+  display:flex;gap:24px;margin-top:32px;padding-top:28px;
+  border-top:1px solid rgba(255,255,255,.1);flex-wrap:wrap
+}
+.ts{display:flex;flex-direction:column}
+.ts .num{font-size:28px;font-weight:900;color:var(--white);font-family:'Playfair Display',serif}
+.ts .lbl{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+
+/* Hero family SVG */
+.hero-visual{display:flex;justify-content:center;align-items:flex-end}
+.hero-visual svg{width:100%;max-width:420px;height:auto;filter:drop-shadow(0 20px 60px rgba(200,16,46,.15))}
+
+/* ── TRUST BAR ───────────────────────────────────── */
+.trust-bar{
+  background:var(--white);border-bottom:1px solid var(--mid);
+  padding:16px 24px
+}
+.trust-bar-inner{
+  max-width:1080px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;gap:40px;flex-wrap:wrap
+}
+.trust-item{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--muted)}
+.trust-item .ti-icon{font-size:18px}
+.trust-item strong{color:var(--text)}
+
+/* ── MAIN ────────────────────────────────────────── */
+.main{max-width:820px;margin:0 auto;padding:48px 20px 80px}
+
+/* Progress steps */
+.progress-bar{
+  display:flex;align-items:center;justify-content:center;gap:0;
+  margin-bottom:40px;flex-wrap:wrap;gap:4px
+}
+.pb-step{
+  display:flex;flex-direction:column;align-items:center;gap:4px;
+  position:relative
+}
+.pb-dot{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--mid);color:#999;
+  display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:800;
+  transition:all .3s;border:2px solid transparent
+}
+.pb-step.active .pb-dot{background:var(--red);color:var(--white);border-color:var(--red)}
+.pb-step.done .pb-dot{background:var(--green);color:var(--white);border-color:var(--green)}
+.pb-label{font-size:10px;color:#aaa;font-weight:600;letter-spacing:.5px;white-space:nowrap}
+.pb-step.active .pb-label{color:var(--red)}
+.pb-line{width:32px;height:2px;background:var(--mid);margin-bottom:20px;flex-shrink:0}
+.pb-line.done{background:var(--green)}
+
+/* Cards */
+.card{
+  background:var(--white);border-radius:16px;
+  box-shadow:var(--shadow);margin-bottom:20px;overflow:hidden;
+  border:1px solid rgba(0,0,0,.04);
+  transition:box-shadow .3s
+}
+.card.hidden{display:none}
+.card:hover{box-shadow:0 8px 40px rgba(0,0,0,.12)}
+.card-head{
+  background:var(--black);color:var(--white);
+  padding:16px 24px;display:flex;align-items:center;gap:12px
+}
+.card-head .step-badge{
+  background:var(--red);color:var(--white);
+  width:28px;height:28px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:13px;flex-shrink:0
+}
+.card-head .ch-title{font-weight:700;font-size:15px}
+.card-head .ch-sub{font-size:11px;color:#888;margin-top:1px}
+.card-body{padding:24px}
+
+/* Toggle buttons */
+.tog-group{display:flex;gap:12px;flex-wrap:wrap}
+.tog{
+  flex:1;min-width:140px;
+  border:2px solid var(--mid);background:var(--off-white);
+  border-radius:12px;padding:18px 14px;
+  cursor:pointer;text-align:center;
+  transition:all .2s;font-family:inherit
+}
+.tog:hover{border-color:var(--red);background:#fff8f9;transform:translateY(-2px)}
+.tog.sel{border-color:var(--red);background:#fff0f2;box-shadow:0 0 0 3px rgba(200,16,46,.08)}
+.tog .ti{font-size:32px;display:block;margin-bottom:8px}
+.tog .tl{font-weight:700;font-size:14px;display:block;color:var(--text)}
+.tog.sel .tl{color:var(--red)}
+.tog .td{font-size:12px;color:var(--muted);display:block;margin-top:3px}
+
+/* Product tabs */
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.prod-tab{
+  border:2px solid var(--mid);background:var(--off-white);
+  border-radius:12px;padding:18px 14px;cursor:pointer;text-align:center;
+  transition:all .2s;font-family:inherit
+}
+.prod-tab:hover{border-color:var(--red);background:#fff8f9}
+.prod-tab.sel{border-color:var(--red);background:#fff0f2;box-shadow:0 0 0 3px rgba(200,16,46,.08)}
+.prod-tab .pti{font-size:30px;display:block;margin-bottom:8px}
+.prod-tab .ptn{font-weight:700;font-size:13px;color:var(--text)}
+.prod-tab.sel .ptn{color:var(--red)}
+.prod-tab .ptd{font-size:11px;color:var(--muted);margin-top:4px;line-height:1.4}
+
+/* Plan cards */
+.plans-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px}
+.plan-card{
+  border:2px solid var(--mid);border-radius:12px;padding:16px 12px;
+  cursor:pointer;text-align:center;transition:all .2s;position:relative;
+  background:var(--off-white)
+}
+.plan-card:hover{border-color:var(--red);transform:translateY(-3px);box-shadow:0 8px 24px rgba(200,16,46,.12)}
+.plan-card.sel{border-color:var(--red);background:#fff0f2;box-shadow:0 0 0 3px rgba(200,16,46,.1)}
+.best-badge{
+  position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:var(--white);
+  font-size:9px;font-weight:800;padding:3px 12px;
+  border-radius:20px;white-space:nowrap;letter-spacing:1px;
+  box-shadow:0 2px 8px rgba(0,0,0,.2)
+}
+.plan-card .pcn{font-weight:800;font-size:14px;color:var(--text);margin-bottom:4px}
+.plan-card.sel .pcn{color:var(--red)}
+.plan-card .pcc{font-size:10px;color:var(--muted);margin-bottom:10px;line-height:1.4}
+.plan-card .pcp{font-size:22px;font-weight:900;color:var(--red);font-family:'Playfair Display',serif}
+.plan-card .pcps{font-size:10px;color:var(--muted)}
+.plan-card .pcw{font-size:9px;color:#f97316;margin-top:4px;font-weight:600}
+
+/* Bus option */
+.bus-group{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.bus-btn{
+  border:2px solid var(--mid);background:var(--off-white);
+  border-radius:10px;padding:14px;cursor:pointer;text-align:center;
+  transition:all .2s;font-family:inherit
+}
+.bus-btn:hover{border-color:var(--red)}
+.bus-btn.sel{border-color:var(--red);background:#fff0f2}
+.bus-btn .bbi{font-size:24px;display:block;margin-bottom:4px}
+.bus-btn .bbl{font-weight:700;font-size:12px}
+.bus-btn .bbp{font-size:18px;font-weight:900;color:var(--red);margin-top:4px}
+.bus-btn .bbn{font-size:10px;color:var(--muted)}
+
+/* Members */
+.member-card{
+  border:1.5px solid var(--mid);border-radius:10px;
+  padding:16px;margin-bottom:12px;background:var(--off-white);position:relative
+}
+.member-card .mt{
+  font-weight:700;font-size:13px;color:var(--text);
+  margin-bottom:12px;display:flex;justify-content:space-between;align-items:center
+}
+.remove-btn{
+  background:none;border:none;color:#ccc;font-size:18px;cursor:pointer;
+  padding:0;line-height:1;transition:color .2s
+}
+.remove-btn:hover{color:var(--red)}
+
+/* Forms */
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.frow.one{grid-template-columns:1fr}
+.frow.three{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:520px){.frow,.frow.three{grid-template-columns:1fr}}
+.fgrp{display:flex;flex-direction:column;gap:5px}
+label.fl{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+input,select,textarea{
+  border:2px solid var(--mid);border-radius:8px;
+  padding:10px 14px;font-size:14px;font-family:inherit;
+  color:var(--text);background:var(--white);width:100%;
+  transition:border-color .2s,box-shadow .2s
+}
+input:focus,select:focus,textarea:focus{
+  outline:none;border-color:var(--red);
+  box-shadow:0 0 0 3px rgba(200,16,46,.08)
+}
+.age-pill{
+  background:var(--red);color:var(--white);
+  border-radius:6px;padding:4px 10px;font-size:11px;font-weight:700;
+  display:inline-block;margin-top:4px
+}
+
+.add-member-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;border:2px dashed var(--mid);background:transparent;
+  border-radius:10px;padding:14px;cursor:pointer;font-size:13px;
+  font-weight:700;color:var(--muted);transition:all .2s;font-family:inherit;margin-top:4px
+}
+.add-member-btn:hover{border-color:var(--red);color:var(--red);background:#fff5f6}
+
+/* Premium summary */
+.prem-box{
+  background:var(--black);border-radius:12px;
+  padding:20px;color:var(--white);margin-top:16px
+}
+.prem-box .pb-title{
+  font-size:10px;color:#888;text-transform:uppercase;
+  letter-spacing:1.5px;margin-bottom:12px;font-weight:700
+}
+.prem-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:6px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:13px
+}
+.prem-row:last-child{border-bottom:none}
+.prem-total{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:14px;padding-top:14px;border-top:1px solid rgba(255,255,255,.15)
+}
+.pt-label{font-size:12px;font-weight:700;color:#aaa;text-transform:uppercase;letter-spacing:1px}
+.pt-amount{font-size:28px;font-weight:900;color:var(--red);font-family:'Playfair Display',serif}
+
+/* Sum assured */
+.sum-display{
+  font-size:40px;font-weight:900;color:var(--red);
+  text-align:center;margin:14px 0 4px;
+  font-family:'Playfair Display',serif
+}
+.sum-sublabel{font-size:12px;color:var(--muted);text-align:center;margin-bottom:14px}
+input[type=range]{
+  -webkit-appearance:none;width:100%;height:5px;
+  border-radius:3px;background:var(--mid);outline:none;border:none;padding:0;box-shadow:none
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:24px;height:24px;border-radius:50%;
+  background:var(--red);cursor:pointer;box-shadow:0 2px 8px rgba(200,16,46,.4)
+}
+.range-labels{display:flex;justify-content:space-between;font-size:11px;color:#aaa;margin-top:6px}
+
+/* Calc result */
+.calc-result{
+  background:linear-gradient(135deg,var(--black),#1a0408);
+  border-radius:12px;padding:20px;margin-top:16px;color:var(--white);text-align:center
+}
+.cr-label{font-size:10px;color:#888;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:8px;font-weight:700}
+.cr-amount{font-size:40px;font-weight:900;color:var(--red);font-family:'Playfair Display',serif}
+.cr-period{font-size:12px;color:#888;margin-top:2px}
+.cr-detail{font-size:11px;color:#777;margin-top:12px;line-height:1.6;padding-top:12px;border-top:1px solid rgba(255,255,255,.08)}
+
+/* Medical */
+.mq{margin-bottom:16px}
+.mq .mq-text{font-weight:600;font-size:14px;margin-bottom:8px;line-height:1.4;color:var(--text)}
+.radio-row{display:flex;gap:16px}
+.radio-item{display:flex;align-items:center;gap:7px;cursor:pointer;font-size:14px;font-weight:500}
+.radio-item input[type=radio]{width:17px;height:17px;accent-color:var(--red);cursor:pointer}
+.med-notice{
+  background:#fffbeb;border:1.5px solid #fcd34d;border-radius:8px;
+  padding:12px 14px;font-size:12px;color:#92400e;margin-top:12px;line-height:1.6
+}
+
+/* Payment */
+.pay-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.pay-card{
+  border:2px solid var(--mid);border-radius:10px;padding:14px 10px;
+  cursor:pointer;text-align:center;transition:all .2s;background:var(--off-white)
+}
+.pay-card:hover{border-color:var(--red);transform:translateY(-2px)}
+.pay-card.sel{border-color:var(--red);background:#fff0f2;box-shadow:0 0 0 3px rgba(200,16,46,.08)}
+.pay-card .py-icon{font-size:26px;display:block;margin-bottom:6px}
+.pay-card .py-name{font-weight:700;font-size:13px;color:var(--text)}
+.pay-card.sel .py-name{color:var(--red)}
+.pay-card .py-det{font-size:10px;color:var(--muted);margin-top:4px;line-height:1.4}
+.ecash-note{
+  background:#f0fdf4;border:1.5px solid #86efac;border-radius:8px;
+  padding:12px;font-size:12px;color:#166534;margin-top:10px;line-height:1.6;display:none
+}
+
+.section-lbl{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:18px 0 10px}
+
+/* Checkboxes */
+.check-item{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:13px;cursor:pointer;padding:6px 0;line-height:1.5
+}
+.check-item input[type=checkbox]{width:17px;height:17px;accent-color:var(--red);cursor:pointer;flex-shrink:0;margin-top:2px}
+
+/* Submit */
+.submit-btn{
+  width:100%;background:var(--red);color:var(--white);border:none;
+  border-radius:10px;padding:18px;font-size:17px;font-weight:800;
+  cursor:pointer;font-family:inherit;margin-top:12px;
+  transition:all .2s;letter-spacing:.3px;display:flex;align-items:center;justify-content:center;gap:10px
+}
+.submit-btn:hover{background:var(--dark-red);transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,16,46,.35)}
+
+/* Success */
+.success-box{
+  background:#f0fdf4;border:2px solid #86efac;border-radius:12px;
+  padding:28px;text-align:center;display:none;margin-top:16px
+}
+.sb-icon{font-size:52px;display:block;margin-bottom:12px}
+.sb-title{font-weight:900;font-size:20px;color:#166534;margin-bottom:8px;font-family:'Playfair Display',serif}
+.sb-text{font-size:14px;color:#555;line-height:1.7}
+
+/* Warn/notice boxes */
+.warn-box{
+  background:#fff7ed;border:1.5px solid #fed7aa;border-radius:8px;
+  padding:10px 12px;font-size:12px;color:#9a3412;margin-top:8px;line-height:1.6;display:none
+}
+.notice{font-size:12px;color:var(--muted);font-style:italic;margin-top:6px}
+.optional-tag{font-size:10px;color:#aaa;font-weight:400;font-style:italic}
+
+/* Other products */
+.other-option{
+  display:flex;align-items:center;gap:14px;text-align:left;
+  border:2px solid var(--mid);background:var(--off-white);
+  border-radius:12px;padding:16px;cursor:pointer;font-family:inherit;
+  width:100%;transition:all .2s;margin-bottom:10px
+}
+.other-option:hover{border-color:var(--red);background:#fff8f9}
+.other-option.sel{border-color:var(--red);background:#fff0f2}
+.other-option .oi{font-size:28px;flex-shrink:0}
+.other-option .ot .on{font-weight:700;font-size:14px;color:var(--text);display:block}
+.other-option.sel .ot .on{color:var(--red)}
+.other-option .ot .od{font-size:12px;color:var(--muted);margin-top:2px}
+
+/* Freq buttons */
+.freq-group{display:flex;gap:8px;flex-wrap:wrap}
+.freq-btn{
+  flex:1;min-width:100px;border:2px solid var(--mid);background:var(--off-white);
+  border-radius:8px;padding:12px 8px;cursor:pointer;text-align:center;
+  font-family:inherit;font-weight:700;font-size:13px;color:var(--text);transition:all .2s
+}
+.freq-btn:hover{border-color:var(--red)}
+.freq-btn.sel{border-color:var(--red);background:#fff0f2;color:var(--red)}
+
+/* ── AGENT CONTACT STRIP ─────────────────────────── */
+.agent-strip{
+  background:var(--black);padding:48px 24px;text-align:center;
+  position:relative;overflow:hidden
+}
+.agent-strip::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(200,16,46,.1) 0%,transparent 60%);
+  pointer-events:none
+}
+.agent-strip .as-label{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--red);text-transform:uppercase;margin-bottom:8px}
+.agent-strip .as-name{font-family:'Playfair Display',serif;font-size:36px;font-weight:900;color:var(--white);margin-bottom:4px}
+.agent-strip .as-role{font-size:12px;color:#888;margin-bottom:24px;letter-spacing:1px}
+.contact-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:380px;margin:0 auto}
+.contact-btn{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 28px;border-radius:8px;font-weight:700;font-size:15px;
+  text-decoration:none;color:var(--white);transition:opacity .2s,transform .15s;flex:1;min-width:150px
+}
+.contact-btn:hover{opacity:.9;transform:translateY(-1px)}
+.contact-btn.wa{background:#22c55e}
+.contact-btn.call{background:var(--red)}
+
+/* ── FOOTER ─────────────────────────────────────── */
+footer{
+  background:#0a0a0a;color:#555;text-align:center;
+  padding:24px;font-size:11px;line-height:1.9;
+  border-top:1px solid #1a1a1a
+}
+footer strong{color:#888}
+
+/* ── UTILS ───────────────────────────────────────── */
+.divider{height:1px;background:var(--mid);margin:16px 0}
+.highlight{color:var(--red);font-weight:700}
+.tag-badge{
+  display:inline-block;background:var(--red);color:var(--white);
+  font-size:9px;font-weight:800;padding:2px 8px;border-radius:20px;
+  letter-spacing:1px;text-transform:uppercase;margin-left:6px
+}
+
+/* Hero image */
+.hero-img-wrap{position:relative;border-radius:16px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.5)}
+.hero-img{width:100%;max-width:460px;height:360px;object-fit:cover;object-position:center top;display:block;border-radius:16px}
+.hero-img-badge{
+  position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
+  background:rgba(0,0,0,.75);backdrop-filter:blur(8px);
+  color:white;font-size:12px;font-weight:700;
+  padding:8px 18px;border-radius:20px;white-space:nowrap;
+  border:1px solid rgba(255,255,255,.15)
+}
+
+/* Responsive hero */
+@media(max-width:700px){
+  .hero-content{grid-template-columns:1fr;gap:30px}
+  .hero-visual{display:none}
+  .prod-grid{grid-template-columns:1fr}
+  .plans-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Scroll reveal */
+.card{opacity:0;transform:translateY(16px);animation:slideUp .4s ease forwards}
+@keyframes slideUp{to{opacity:1;transform:translateY(0)}}
+.card:nth-child(2){animation-delay:.05s}
+.card:nth-child(3){animation-delay:.1s}
+.card:nth-child(4){animation-delay:.15s}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header>
+  <div class="header-inner">
+    <div class="logo-wrap">
+      <div class="fml-logo">
+        <div class="brand">First Mutual Life</div>
+        <div class="assurance">Assurance Company</div>
+        <div class="tagline">Creating Wealth For Life</div>
+      </div>
+    </div>
+    <div class="agent-pill">
+      <span class="ap-flag">🇿🇼</span>
+      <div>
+        <div class="ap-name">Teudilous Shoko</div>
+        <div class="ap-phone">+263 779 540 326</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="eyebrow">🛡️ Zimbabwe's Trusted Since 1990</div>
+      <h1>Protect the people<br>who <em>matter most</em><br>to you.</h1>
+      <p>Affordable funeral and life cover for your whole family — starting from just $1.50 a month. No medical exam required. Claims settled in 24 hours.</p>
+      <div class="hero-cta-row">
+        <button class="btn-primary" onclick="document.getElementById('step1').scrollIntoView({behavior:'smooth'})">
+          Get Covered Today ↓
+        </button>
+        <a class="btn-outline" href="tel:+263779540326">📞 Call Agent</a>
+      </div>
+      <div class="trust-stats">
+        <div class="ts"><span class="num">30+</span><span class="lbl">Years in Zimbabwe</span></div>
+        <div class="ts"><span class="num">24hrs</span><span class="lbl">Claims Paid</span></div>
+        <div class="ts"><span class="num">$1.50</span><span class="lbl">Starting Premium</span></div>
+        <div class="ts"><span class="num">IPEC</span><span class="lbl">Regulated</span></div>
+      </div>
+    </div>
+    <!-- Real family photo -->
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <img 
+          src="https://images.unsplash.com/photo-1577896849786-738ed6c78bd3?w=700&auto=format&fit=crop&q=80"
+          alt="Happy African family"
+          class="hero-img"
+          onerror="this.parentElement.style.display='none'"
+        >
+        <div class="hero-img-badge">🛡️ Your family is covered</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TRUST BAR ═══ -->
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <div class="trust-item"><span class="ti-icon">✅</span><span><strong>No Medical Exam</strong> for funeral cover</span></div>
+    <div class="trust-item"><span class="ti-icon">⚡</span><span><strong>24-Hour</strong> claims settlement</span></div>
+    <div class="trust-item"><span class="ti-icon">🏛️</span><span><strong>IPEC Regulated</strong> — fully licensed</span></div>
+    <div class="trust-item"><span class="ti-icon">🇿🇼</span><span><strong>Nationwide</strong> coverage across Zimbabwe</span></div>
+    <div class="trust-item"><span class="ti-icon">💵</span><span>Cover from <strong>$1.50/month</strong></span></div>
+  </div>
+</div>
+
+<!-- ═══ FORM ═══ -->
+<div class="main">
+
+<!-- STEP 1 -->
+<div class="card" id="step1">
+  <div class="card-head">
+    <div class="step-badge">1</div>
+    <div><div class="ch-title">Who are you covering?</div><div class="ch-sub">Choose your coverage type to begin</div></div>
+  </div>
+  <div class="card-body">
+    <div class="tog-group">
+      <button class="tog" onclick="selectCoverage('individual')" id="btn-individual">
+        <span class="ti">👤</span>
+        <span class="tl">Just Myself</span>
+        <span class="td">Individual cover — single person</span>
+      </button>
+      <button class="tog" onclick="selectCoverage('family')" id="btn-family">
+        <span class="ti">👨‍👩‍👧‍👦</span>
+        <span class="tl">My Family</span>
+        <span class="td">Cover spouse, children & dependants</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 2 -->
+<div class="card hidden" id="step2">
+  <div class="card-head">
+    <div class="step-badge">2</div>
+    <div><div class="ch-title">Choose your product</div><div class="ch-sub">Select the type of cover that suits your needs</div></div>
+  </div>
+  <div class="card-body">
+    <div class="prod-grid">
+      <button class="prod-tab" onclick="selectProduct('cash')" id="prod-cash">
+        <span class="pti">💵</span>
+        <span class="ptn">Funeral Cash Plan</span>
+        <div class="ptd">Cash paid to your family within 24 hrs. No medical exam required.</div>
+      </button>
+      <button class="prod-tab" onclick="selectProduct('eternal')" id="prod-eternal">
+        <span class="pti">⚰️</span>
+        <span class="ptn">Eternal Life Plan</span>
+        <div class="ptd">Full funeral service provided — casket, transport & more.</div>
+      </button>
+      <button class="prod-tab" onclick="selectProduct('other')" id="prod-other">
+        <span class="pti">📋</span>
+        <span class="ptn">Other Products</span>
+        <div class="ptd">Early Harvest savings, Platinum & Guardian Life cover.</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 3A: CASH PLAN -->
+<div class="card hidden" id="step3-cash">
+  <div class="card-head">
+    <div class="step-badge">3</div>
+    <div><div class="ch-title">Choose your cover amount</div><div class="ch-sub">e-FML Funeral Cash Plan — premiums calculated by age</div></div>
+  </div>
+  <div class="card-body">
+    <p class="notice">Rate: USD per $1,000 sum assured per month. Premium is calculated based on your age at entry.</p>
+    <br>
+    <div class="frow one">
+      <div class="fgrp">
+        <label class="fl">Your Date of Birth <span style="color:var(--red)">*</span></label>
+        <input type="date" id="cash-dob" onchange="calcCashPremium()">
+        <span class="age-pill" id="cash-age-display" style="display:none"></span>
+      </div>
+    </div>
+    <br>
+    <label class="fl">Sum Assured — Slide to select</label>
+    <div class="sum-display" id="sum-display">$3,000</div>
+    <div class="sum-sublabel">Drag the slider to choose how much your family receives</div>
+    <input type="range" id="sum-slider" min="500" max="6000" step="500" value="3000" oninput="calcCashPremium()">
+    <div class="range-labels"><span>$500</span><span>$6,000</span></div>
+    <div class="calc-result" id="cash-result" style="display:none">
+      <div class="cr-label">Your Monthly Premium</div>
+      <div class="cr-amount" id="cash-premium-amount">$0.00</div>
+      <div class="cr-period">per month</div>
+      <div class="cr-detail" id="cash-premium-detail"></div>
+    </div>
+    <div class="warn-box" id="cash-warn"></div>
+  </div>
+</div>
+
+<!-- STEP 3B: ETERNAL LIFE -->
+<div class="card hidden" id="step3-eternal">
+  <div class="card-head">
+    <div class="step-badge">3</div>
+    <div><div class="ch-title">Choose your funeral plan</div><div class="ch-sub">Eternal Life Plan — prices shown for ages 23–69</div></div>
+  </div>
+  <div class="card-body">
+    <div class="plans-grid" id="plans-grid"></div>
+    <div id="bus-section" style="display:none">
+      <div class="section-lbl">🚐 Transport Option</div>
+      <div class="bus-group">
+        <button class="bus-btn" onclick="selectBus(false)" id="bus-no">
+          <span class="bbi">🚐</span>
+          <span class="bbl">Without Hearse Bus</span>
+          <div class="bbp" id="bus-no-price">$0.00</div>
+          <span class="bbn">per month · standard</span>
+        </button>
+        <button class="bus-btn" onclick="selectBus(true)" id="bus-yes">
+          <span class="bbi">🚌</span>
+          <span class="bbl">With Hearse Bus</span>
+          <div class="bbp" id="bus-yes-price">$0.00</div>
+          <span class="bbn">per month · includes mourner transport</span>
+        </button>
+      </div>
+    </div>
+    <div class="warn-box" id="eternal-warn-box"></div>
+  </div>
+</div>
+
+<!-- STEP 3C: OTHER PRODUCTS -->
+<div class="card hidden" id="step3-other">
+  <div class="card-head">
+    <div class="step-badge">3</div>
+    <div><div class="ch-title">Select a product</div><div class="ch-sub">Your agent will provide full details on contact</div></div>
+  </div>
+  <div class="card-body">
+    <button class="other-option" onclick="selectOther(this,'Early Harvest Plan')" id="other-early">
+      <span class="oi">🌱</span>
+      <div class="ot">
+        <span class="on">Early Harvest Plan</span>
+        <span class="od">Savings & investment — grow your wealth while you're alive</span>
+      </div>
+    </button>
+    <button class="other-option" onclick="selectOther(this,'Platinum Plan')" id="other-plat">
+      <span class="oi">💎</span>
+      <div class="ot">
+        <span class="on">Platinum Plan</span>
+        <span class="od">Premium life assurance with comprehensive cover</span>
+      </div>
+    </button>
+    <button class="other-option" onclick="selectOther(this,'Guardian Life Plan')" id="other-guard">
+      <span class="oi">🛡️</span>
+      <div class="ot">
+        <span class="on">Guardian Life Plan</span>
+        <span class="od">Life cover designed to protect your dependants</span>
+      </div>
+    </button>
+    <p class="notice" style="margin-top:12px">Teudilous will explain exact premiums and benefits for these plans when he contacts you.</p>
+  </div>
+</div>
+
+<!-- STEP 4: FAMILY MEMBERS -->
+<div class="card hidden" id="step4">
+  <div class="card-head">
+    <div class="step-badge">4</div>
+    <div><div class="ch-title">Add family members</div><div class="ch-sub">Everyone you'd like covered under this policy</div></div>
+  </div>
+  <div class="card-body">
+    <div id="members-container"></div>
+    <button class="add-member-btn" onclick="addMember()">➕ Add Family Member</button>
+    <div class="prem-box" id="family-premium-box" style="display:none">
+      <div class="pb-title">Premium Breakdown</div>
+      <div id="premium-rows"></div>
+      <div class="prem-total">
+        <div>
+          <div class="pt-label">Total Monthly</div>
+          <div style="font-size:11px;color:#666;margin-top:2px">All members combined</div>
+        </div>
+        <div style="text-align:right">
+          <div class="pt-amount" id="family-total-amount">$0.00</div>
+          <div style="font-size:10px;color:#666">per month</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 5: PERSONAL DETAILS -->
+<div class="card hidden" id="step5">
+  <div class="card-head">
+    <div class="step-badge" id="step5-num">5</div>
+    <div><div class="ch-title">Your personal details</div><div class="ch-sub">Required for the official proposal form</div></div>
+  </div>
+  <div class="card-body">
+    <div class="frow">
+      <div class="fgrp">
+        <label class="fl">Surname <span style="color:var(--red)">*</span></label>
+        <input type="text" id="surname" placeholder="e.g. Moyo">
+      </div>
+      <div class="fgrp">
+        <label class="fl">First Name <span style="color:var(--red)">*</span></label>
+        <input type="text" id="firstname" placeholder="e.g. Tatenda">
+      </div>
+    </div>
+    <div class="frow">
+      <div class="fgrp">
+        <label class="fl">Date of Birth <span style="color:var(--red)">*</span></label>
+        <input type="date" id="main-dob" onchange="syncMainDob()">
+      </div>
+      <div class="fgrp">
+        <label class="fl">National ID <span style="color:var(--red)">*</span></label>
+        <input type="text" id="natid" placeholder="63-123456 A 00">
+      </div>
+    </div>
+    <div class="frow">
+      <div class="fgrp">
+        <label class="fl">Gender <span style="color:var(--red)">*</span></label>
+        <select id="gender">
+          <option value="">-- Select --</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+      <div class="fgrp">
+        <label class="fl">Marital Status <span style="color:var(--red)">*</span></label>
+        <select id="marital">
+          <option value="">-- Select --</option>
+          <option>Married</option>
+          <option>Single</option>
+          <option>Divorced</option>
+          <option>Widowed</option>
+        </select>
+      </div>
+    </div>
+    <div class="frow">
+      <div class="fgrp">
+        <label class="fl">Mobile Number <span style="color:var(--red)">*</span></label>
+        <input type="tel" id="mobile" placeholder="+263 7XX XXX XXX">
+      </div>
+      <div class="fgrp">
+        <label class="fl">WhatsApp Number <span class="optional-tag">(if different)</span></label>
+        <input type="tel" id="whatsapp" placeholder="+263 7XX XXX XXX">
+      </div>
+    </div>
+    <div class="frow">
+      <div class="fgrp">
+        <label class="fl">Email <span class="optional-tag">(optional)</span></label>
+        <input type="email" id="email" placeholder="you@email.com">
+      </div>
+      <div class="fgrp">
+        <label class="fl">Town / City <span style="color:var(--red)">*</span></label>
+        <input type="text" id="city" placeholder="e.g. Harare, Beitbridge...">
+      </div>
+    </div>
+    <div class="frow one">
+      <div class="fgrp">
+        <label class="fl">Physical Address <span style="color:var(--red)">*</span></label>
+        <input type="text" id="address" placeholder="Street, Suburb, Town">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 6: MEDICAL -->
+<div class="card hidden" id="step6">
+  <div class="card-head">
+    <div class="step-badge" id="step6-num">6</div>
+    <div><div class="ch-title">Medical Declaration</div><div class="ch-sub">Please answer honestly — this helps process your application</div></div>
+  </div>
+  <div class="card-body">
+    <div class="mq">
+      <div class="mq-text">1. Are you currently in good health with no known serious illnesses?</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="mq1" value="Yes"> Yes</label>
+        <label class="radio-item"><input type="radio" name="mq1" value="No"> No</label>
+      </div>
+    </div>
+    <div class="mq">
+      <div class="mq-text">2. Have you ever been diagnosed with cancer, HIV/AIDS, heart disease, diabetes, or any terminal illness?</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="mq2" value="No"> No</label>
+        <label class="radio-item"><input type="radio" name="mq2" value="Yes"> Yes</label>
+      </div>
+    </div>
+    <div class="mq">
+      <div class="mq-text">3. Are you currently receiving treatment or taking medication regularly?</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="mq3" value="No"> No</label>
+        <label class="radio-item"><input type="radio" name="mq3" value="Yes"> Yes</label>
+      </div>
+    </div>
+    <div class="mq">
+      <div class="mq-text">4. Have you had any surgery or been hospitalised in the last 2 years?</div>
+      <div class="radio-row">
+        <label class="radio-item"><input type="radio" name="mq4" value="No"> No</label>
+        <label class="radio-item"><input type="radio" name="mq4" value="Yes"> Yes</label>
+      </div>
+    </div>
+    <div class="med-notice">
+      ⚠️ <strong>Note:</strong> For the e-FML Funeral Cash Plan, no medical examination is required. For other products, First Mutual Life may request a medical exam depending on sum assured and your answers above. Your agent will guide you through this process.
+    </div>
+    <div class="frow one" style="margin-top:14px">
+      <div class="fgrp">
+        <label class="fl">Any additional medical information to disclose? <span class="optional-tag">(optional)</span></label>
+        <textarea id="med-extra" rows="2" placeholder="Leave blank if none..."></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 7: PAYMENT -->
+<div class="card hidden" id="step7">
+  <div class="card-head">
+    <div class="step-badge" id="step7-num">7</div>
+    <div><div class="ch-title">How will you pay?</div><div class="ch-sub">Choose your preferred payment method and frequency</div></div>
+  </div>
+  <div class="card-body">
+    <div class="pay-grid">
+      <div class="pay-card" onclick="selectPay(this,'EcoCash')" id="pay-eco">
+        <span class="py-icon">📱</span>
+        <div class="py-name">EcoCash</div>
+        <div class="py-det">*151*100#<br>Biller Code: 17123</div>
+      </div>
+      <div class="pay-card" onclick="selectPay(this,'One Money')" id="pay-one">
+        <span class="py-icon">📲</span>
+        <div class="py-name">One Money</div>
+        <div class="py-det">Biller Code: 22365</div>
+      </div>
+      <div class="pay-card" onclick="selectPay(this,'Stop Order')" id="pay-stop">
+        <span class="py-icon">🏢</span>
+        <div class="py-name">Stop Order</div>
+        <div class="py-det">Employer payroll deduction</div>
+      </div>
+      <div class="pay-card" onclick="selectPay(this,'SSB – Civil Servant')" id="pay-ssb">
+        <span class="py-icon">🏛️</span>
+        <div class="py-name">SSB</div>
+        <div class="py-det">Salary Service Bureau<br>Civil servants</div>
+      </div>
+      <div class="pay-card" onclick="selectPay(this,'Bank / Cash')" id="pay-bank">
+        <span class="py-icon">🏦</span>
+        <div class="py-name">Bank / Cash</div>
+        <div class="py-det">Any First Mutual Life branch</div>
+      </div>
+    </div>
+    <div class="ecash-note" id="ecash-auto-note">
+      💡 <strong>EcoCash Auto-Debit available!</strong> Like a subscription — your premium is automatically deducted each month. No need to remember to pay. Ask Teudilous to set this up.
+    </div>
+    <div class="section-lbl">Payment Frequency</div>
+    <div class="freq-group">
+      <button class="freq-btn" onclick="selectFreq(this,'Monthly')">Monthly</button>
+      <button class="freq-btn" onclick="selectFreq(this,'Quarterly')">Quarterly</button>
+      <button class="freq-btn" onclick="selectFreq(this,'Half Yearly')">Half Yearly</button>
+      <button class="freq-btn" onclick="selectFreq(this,'Annual')">Annual</button>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 8: SUBMIT -->
+<div class="card hidden" id="step8">
+  <div class="card-head">
+    <div class="step-badge" id="step8-num">8</div>
+    <div><div class="ch-title">Confirm & Submit</div><div class="ch-sub">Almost done — review and send your registration</div></div>
+  </div>
+  <div class="card-body">
+    <p style="font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:18px">
+      By submitting, you confirm that all information provided is true and accurate. Teudilous Shoko will contact you within <strong style="color:var(--text)">24 hours</strong> via WhatsApp or phone to complete your application and arrange your signature on the official proposal form.
+    </p>
+    <label class="check-item">
+      <input type="checkbox" id="consent1">
+      <span>I confirm all information above is true and correct</span>
+    </label>
+    <label class="check-item">
+      <input type="checkbox" id="consent2">
+      <span>I agree to be contacted by agent Teudilous Shoko regarding my application</span>
+    </label>
+    <label class="check-item">
+      <input type="checkbox" id="consent3">
+      <span>I understand a physical signature will be required to finalise the policy</span>
+    </label>
+    <div class="success-box" id="success-box">
+      <span class="sb-icon">✅</span>
+      <div class="sb-title">Registration Submitted!</div>
+      <div class="sb-text">Your details have been sent directly to Teudilous Shoko via WhatsApp. He will contact you within 24 hours to guide you through the next steps and arrange your signature on the official policy documents.</div>
+    </div>
+    <button class="submit-btn" onclick="submitForm()" id="submit-btn">
+      Submit & Get Covered 🛡️
+    </button>
+  </div>
+</div>
+
+</div><!-- end main -->
+
+<!-- ═══ AGENT CONTACT ═══ -->
+<div class="agent-strip">
+  <div class="as-label">Your Dedicated Agent</div>
+  <div class="as-name">Teudilous Shoko</div>
+  <div class="as-role">First Mutual Life · Zimbabwe Nationwide</div>
+  <div class="contact-btns">
+    <a class="contact-btn wa" href="https://wa.me/263779540326?text=Hello%20Teudilous%2C%20I%20am%20interested%20in%20First%20Mutual%20Life%20cover." target="_blank">💬 WhatsApp</a>
+    <a class="contact-btn call" href="tel:+263779540326">📞 +263 779 540 326</a>
+  </div>
+</div>
+
+<footer>
+  <strong>First Mutual Life Assurance Company</strong><br>
+  First Mutual Park, 100 Borrowdale Road, Harare, Zimbabwe<br>
+  Tel: +263 (242) 886000–17 · www.firstmutual.co.zw<br><br>
+  Agent: <strong>Teudilous Shoko</strong> · +263 779 540 326 · Serving Zimbabwe Nationwide<br>
+  <span style="opacity:.6">Regulated by IPEC Zimbabwe. Premiums subject to review. Issue 1/2025.</span>
+</footer>
+
+<script>
+// ─── STATE ─────────────────────────────────────────────────
+let state = {
+  coverage:null, product:null, plan:null, busIncluded:null,
+  otherProduct:null, members:[], payMethod:null, payFreq:null,
+  cashSumAssured:3000, cashMonthlyPremium:0
+};
+
+// ─── DATA ──────────────────────────────────────────────────
+const eternalPlans = [
+  { id:'local', name:'Local Plan', casket:'Flat Lid Casket', area:'Within 50km of service center', warn:true,
+    warnText:'⚠️ Only covers within 50km of the nearest First Mutual service center. Consider Premier Plan for nationwide peace of mind.',
+    bands:{ '0-22':{noBus:null,bus:null}, '23-69':{noBus:1.50,bus:2.06}, '70-74':{noBus:2.24,bus:3.09} } },
+  { id:'premier', name:'Premier Plan', casket:'Flat Lid Casket', area:'Nationwide', warn:false,
+    bands:{ '0-22':{noBus:null,bus:null}, '23-69':{noBus:2.17,bus:4.43}, '70-74':{noBus:3.26,bus:6.65} } },
+  { id:'executive', name:'Executive Plan', casket:'3-Tier Casket', area:'Nationwide', warn:false, best:true,
+    bands:{ '0-22':{noBus:null,bus:null}, '23-69':{noBus:2.44,bus:4.70}, '70-74':{noBus:3.66,bus:7.04} } },
+  { id:'elite', name:'Elite Plan', casket:'Standard Dome', area:'Nationwide', warn:false,
+    bands:{ '0-22':{noBus:null,bus:null}, '23-69':{noBus:3.23,bus:5.49}, '70-74':{noBus:4.84,bus:8.23} } },
+  { id:'deluxe', name:'Deluxe Plan', casket:'Executive Dome', area:'Nationwide', warn:false,
+    bands:{ '0-22':{noBus:null,bus:null}, '23-69':{noBus:4.36,bus:6.62}, '70-74':{noBus:null,bus:null} } },
+];
+
+const nonBioRates = {
+  local:{noBus:0.28,bus:0.39}, premier:{noBus:0.41,bus:0.83},
+  executive:{noBus:0.46,bus:0.88}, elite:{noBus:0.61,bus:1.03}, deluxe:{noBus:0.82,bus:1.24}
+};
+
+const cashBands = [
+  {min:0, max:23, rate:0.30, maxCover:6000},
+  {min:23,max:65, rate:1.60, maxCover:6000},
+  {min:65,max:70, rate:3.20, maxCover:4000},
+  {min:70,max:75, rate:4.80, maxCover:3000},
+  {min:75,max:81, rate:7.60, maxCover:2000},
+  {min:81,max:86, rate:7.60, maxCover:1500},
+  {min:86,max:91, rate:14.20,maxCover:1200},
+  {min:91,max:200,rate:28.30,maxCover:1000},
+];
+
+// ─── HELPERS ───────────────────────────────────────────────
+function getAge(dob){
+  if(!dob) return null;
+  const d=new Date(dob), now=new Date();
+  let age=now.getFullYear()-d.getFullYear();
+  const m=now.getMonth()-d.getMonth();
+  if(m<0||(m===0&&now.getDate()<d.getDate())) age--;
+  return age;
+}
+function getCashBand(age){ return cashBands.find(b=>age>=b.min&&age<b.max)||null; }
+function getEternalBand(age){ if(age<23) return null; if(age<=69) return '23-69'; if(age<=74) return '70-74'; return null; }
+function show(id){ const e=document.getElementById(id); if(e){e.classList.remove('hidden'); e.style.animation='none'; void e.offsetWidth; e.style.animation='';} }
+function hide(id){ const e=document.getElementById(id); if(e) e.classList.add('hidden'); }
+
+// ─── STEP 1 ────────────────────────────────────────────────
+function selectCoverage(type){
+  state.coverage=type;
+  document.getElementById('btn-individual').classList.toggle('sel',type==='individual');
+  document.getElementById('btn-family').classList.toggle('sel',type==='family');
+  show('step2');
+  document.getElementById('step2').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+// ─── STEP 2 ────────────────────────────────────────────────
+function selectProduct(prod){
+  state.product=prod;
+  ['cash','eternal','other'].forEach(p=>document.getElementById('prod-'+p).classList.toggle('sel',p===prod));
+  hide('step3-cash'); hide('step3-eternal'); hide('step3-other');
+  if(prod==='cash') show('step3-cash');
+  else if(prod==='eternal'){ show('step3-eternal'); renderPlans(); }
+  else show('step3-other');
+  if(state.coverage==='family'){ show('step4'); if(state.members.length===0) addMember(); }
+  else hide('step4');
+  show('step5'); show('step6'); show('step7'); show('step8');
+  updateStepNumbers();
+}
+
+// ─── STEP 3A: CASH PLAN ────────────────────────────────────
+function calcCashPremium(){
+  const dob=document.getElementById('cash-dob').value;
+  const sum=parseInt(document.getElementById('sum-slider').value);
+  state.cashSumAssured=sum;
+  document.getElementById('sum-display').textContent='$'+sum.toLocaleString();
+  const age=getAge(dob);
+  const ageDisp=document.getElementById('cash-age-display');
+  if(age!==null){ ageDisp.style.display='inline-block'; ageDisp.textContent='Age: '+age+' years'; }
+  else ageDisp.style.display='none';
+  const resultBox=document.getElementById('cash-result');
+  const warnBox=document.getElementById('cash-warn');
+  if(age===null||!dob){resultBox.style.display='none';warnBox.style.display='none';return;}
+  const band=getCashBand(age);
+  if(!band){warnBox.style.display='block';warnBox.textContent='Age '+age+' is not eligible for this plan. Please contact your agent.';resultBox.style.display='none';return;}
+  let actualSum=Math.min(sum,band.maxCover);
+  const premium=((actualSum/1000)*band.rate).toFixed(2);
+  state.cashMonthlyPremium=parseFloat(premium);
+  resultBox.style.display='block';
+  warnBox.style.display=(actualSum<sum)?'block':'none';
+  if(actualSum<sum) warnBox.textContent='⚠️ Maximum cover for age '+age+' is $'+band.maxCover.toLocaleString()+'. Premium calculated on $'+actualSum.toLocaleString()+'.';
+  document.getElementById('cash-premium-amount').textContent='$'+premium;
+  document.getElementById('cash-premium-detail').innerHTML=
+    'Age: <b>'+age+'</b> &nbsp;·&nbsp; Rate: <b>$'+band.rate.toFixed(2)+' per $1,000</b> &nbsp;·&nbsp; Cover: <b>$'+actualSum.toLocaleString()+'</b><br>($'+actualSum+' ÷ $1,000) × $'+band.rate.toFixed(2)+' = <b>$'+premium+' / month</b>';
+  syncMainDob();
+}
+
+// ─── STEP 3B: ETERNAL PLANS ───────────────────────────────
+function renderPlans(){
+  const grid=document.getElementById('plans-grid'); if(!grid) return;
+  grid.innerHTML='';
+  eternalPlans.forEach(p=>{
+    const div=document.createElement('div');
+    div.className='plan-card'+(state.plan===p.id?' sel':'');
+    div.onclick=()=>selectPlan(p.id);
+    const price=p.bands['23-69']?p.bands['23-69'].noBus:null;
+    div.innerHTML=(p.best?'<div class="best-badge">BEST VALUE</div>':'')+
+      '<div class="pcn">'+p.name+'</div>'+
+      '<div class="pcc">'+p.casket+'<br><span style="color:#aaa">'+p.area+'</span></div>'+
+      (price?'<div class="pcp">$'+price.toFixed(2)+'<span class="pcps"> /mo</span></div>':'<div style="font-size:12px;color:#aaa;margin-top:8px">See agent</div>')+
+      (p.warn?'<div class="pcw">⚠️ Local only</div>':'');
+    grid.appendChild(div);
+  });
+}
+
+function selectPlan(planId){
+  state.plan=planId;
+  renderPlans();
+  const plan=eternalPlans.find(p=>p.id===planId);
+  document.getElementById('bus-section').style.display='block';
+  const warnBox=document.getElementById('eternal-warn-box');
+  warnBox.style.display=plan.warn?'block':'none';
+  if(plan.warn) warnBox.textContent=plan.warnText;
+  if(plan.bands['23-69']){
+    document.getElementById('bus-no-price').textContent='$'+(plan.bands['23-69'].noBus||0).toFixed(2);
+    document.getElementById('bus-yes-price').textContent='$'+(plan.bands['23-69'].bus||0).toFixed(2);
+  }
+  state.busIncluded=null;
+  document.getElementById('bus-no').classList.remove('sel');
+  document.getElementById('bus-yes').classList.remove('sel');
+  updateFamilyPremium();
+}
+
+function selectBus(withBus){
+  state.busIncluded=withBus;
+  document.getElementById('bus-no').classList.toggle('sel',!withBus);
+  document.getElementById('bus-yes').classList.toggle('sel',withBus);
+  updateFamilyPremium();
+}
+
+// ─── STEP 3C ───────────────────────────────────────────────
+function selectOther(el,name){
+  state.otherProduct=name;
+  document.querySelectorAll('.other-option').forEach(b=>b.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+// ─── STEP 4: MEMBERS ───────────────────────────────────────
+let memberCount=0;
+function addMember(){
+  memberCount++;
+  const id='m'+memberCount;
+  const isMain=state.members.length===0;
+  state.members.push({id,name:'',dob:'',age:null,relationship:isMain?'main':''});
+  renderMembers();
+}
+function removeMember(id){
+  state.members=state.members.filter(m=>m.id!==id);
+  renderMembers(); updateFamilyPremium();
+}
+function renderMembers(){
+  const c=document.getElementById('members-container'); if(!c) return;
+  c.innerHTML='';
+  state.members.forEach((m,idx)=>{
+    const isMain=idx===0;
+    const div=document.createElement('div'); div.className='member-card';
+    const relOpts=isMain
+      ?'<option value="main">Main Life (You)</option>'
+      :`<option value="">Relationship...</option>
+        <option value="spouse" ${m.relationship==='spouse'?'selected':''}>Spouse</option>
+        <option value="bio-child" ${m.relationship==='bio-child'?'selected':''}>Child (Biological)</option>
+        <option value="nonbio-child" ${m.relationship==='nonbio-child'?'selected':''}>Child (Non-biological)</option>
+        <option value="dependent" ${m.relationship==='dependent'?'selected':''}>Dependant</option>`;
+    div.innerHTML=`<div class="mt">
+      <span>${isMain?'👤 Main Life (You)':'👥 Member '+(idx+1)}</span>
+      ${!isMain?'<button class="remove-btn" onclick="removeMember(\''+m.id+'\')">✕</button>':''}
+    </div>
+    <div class="frow">
+      <div class="fgrp">
+        <label class="fl">Full Name *</label>
+        <input type="text" value="${m.name||''}" placeholder="Full name" onchange="updateMember('${m.id}','name',this.value)">
+      </div>
+      <div class="fgrp">
+        <label class="fl">Date of Birth *</label>
+        <input type="date" value="${m.dob||''}" onchange="updateMember('${m.id}','dob',this.value)">
+        ${m.age!==null?'<span class="age-pill">Age: '+m.age+'</span>':''}
+      </div>
+    </div>
+    ${!isMain?`<div class="frow one"><div class="fgrp">
+      <label class="fl">Relationship *</label>
+      <select onchange="updateMember('${m.id}','relationship',this.value)">${relOpts}</select>
+    </div></div>`:''}`;
+    c.appendChild(div);
+  });
+}
+function updateMember(id,field,value){
+  const m=state.members.find(m=>m.id===id); if(!m) return;
+  m[field]=value; if(field==='dob') m.age=getAge(value);
+  updateFamilyPremium(); renderMembers();
+}
+function updateFamilyPremium(){
+  if(!state.plan||state.busIncluded===null) return;
+  const plan=eternalPlans.find(p=>p.id===state.plan); if(!plan) return;
+  const rows=[]; let total=0;
+  state.members.forEach(m=>{
+    if(!m.dob||m.age===null) return;
+    const isNonBio=m.relationship==='nonbio-child';
+    let price=0;
+    if(isNonBio){
+      const r=nonBioRates[state.plan]; price=r?(state.busIncluded?r.bus:r.noBus):0;
+    } else {
+      const band=getEternalBand(m.age);
+      if(band&&plan.bands[band]){ price=state.busIncluded?plan.bands[band].bus:plan.bands[band].noBus; if(!price) price=0; }
+    }
+    if(price>0){ rows.push({label:(m.name||m.relationship||'Member')+' (Age '+m.age+')',price}); total+=price; }
+    else if(m.age<23&&!isNonBio) rows.push({label:(m.name||'Child')+' (Age '+m.age+' — included free)',price:0});
+  });
+  const box=document.getElementById('family-premium-box');
+  const rowsEl=document.getElementById('premium-rows');
+  const totalEl=document.getElementById('family-total-amount');
+  if(rows.length>0){
+    box.style.display='block';
+    rowsEl.innerHTML=rows.map(r=>`<div class="prem-row"><span>${r.label}</span><span style="font-weight:700">${r.price>0?'$'+r.price.toFixed(2):'Included free'}</span></div>`).join('');
+    totalEl.textContent='$'+total.toFixed(2);
+  }
+}
+
+// ─── UTILS ────────────────────────────────────────────────
+function updateStepNumbers(){
+  const fam=state.coverage==='family';
+  [['step5-num',fam?5:4],['step6-num',fam?6:5],['step7-num',fam?7:6],['step8-num',fam?8:7]]
+    .forEach(([id,n])=>{ const e=document.getElementById(id); if(e) e.textContent=n; });
+}
+function syncMainDob(){
+  const cashDob=document.getElementById('cash-dob').value;
+  const mainDob=document.getElementById('main-dob');
+  if(cashDob&&!mainDob.value) mainDob.value=cashDob;
+}
+function selectPay(el,method){
+  state.payMethod=method;
+  document.querySelectorAll('.pay-card').forEach(c=>c.classList.remove('sel'));
+  el.classList.add('sel');
+  document.getElementById('ecash-auto-note').style.display=method==='EcoCash'?'block':'none';
+}
+function selectFreq(el,freq){
+  state.payFreq=freq;
+  document.querySelectorAll('.freq-btn').forEach(b=>b.classList.remove('sel'));
+  el.classList.add('sel');
+}
+
+// ─── SUBMIT ───────────────────────────────────────────────
+function submitForm(){
+  const surname=document.getElementById('surname').value.trim();
+  const firstname=document.getElementById('firstname').value.trim();
+  const mobile=document.getElementById('mobile').value.trim();
+  if(!surname||!firstname||!mobile){ alert('Please fill in your Surname, First Name, and Mobile Number.'); return; }
+  if(!document.getElementById('consent1').checked||!document.getElementById('consent2').checked){ alert('Please tick the consent boxes before submitting.'); return; }
+  const mq1=document.querySelector('input[name=mq1]:checked')?.value||'Not answered';
+  const mq2=document.querySelector('input[name=mq2]:checked')?.value||'Not answered';
+  const mq3=document.querySelector('input[name=mq3]:checked')?.value||'Not answered';
+  const mq4=document.querySelector('input[name=mq4]:checked')?.value||'Not answered';
+  const membersList=state.members.map((m,i)=>`  ${i+1}. ${m.name||'?'} | DOB: ${m.dob||'?'} | Age: ${m.age??'?'} | Rel: ${m.relationship||'?'}`).join('\n')||'  None added';
+  let productInfo='';
+  if(state.product==='cash') productInfo=`e-FML Funeral Cash Plan\n  Sum Assured: $${state.cashSumAssured.toLocaleString()}\n  Monthly Premium: $${state.cashMonthlyPremium.toFixed(2)}`;
+  else if(state.product==='eternal'){ const p=eternalPlans.find(p=>p.id===state.plan); productInfo=`Eternal Life Plan\n  Plan: ${p?p.name:'Not selected'}\n  Transport: ${state.busIncluded===null?'Not selected':state.busIncluded?'With Hearse Bus':'Without Hearse Bus'}`; }
+  else productInfo=`Other Product: ${state.otherProduct||'Not selected'}`;
+  const msg=`🛡️ *NEW FIRST MUTUAL LIFE REGISTRATION*
+
+*APPLICANT:*
+Name: ${surname} ${firstname}
+DOB: ${document.getElementById('main-dob').value||'Not given'}
+National ID: ${document.getElementById('natid').value||'Not given'}
+Gender: ${document.getElementById('gender').value||'Not given'}
+Marital Status: ${document.getElementById('marital').value||'Not given'}
+Mobile: ${mobile}
+WhatsApp: ${document.getElementById('whatsapp').value||mobile}
+Email: ${document.getElementById('email').value||'Not given'}
+Town/City: ${document.getElementById('city').value||'Not given'}
+Address: ${document.getElementById('address').value||'Not given'}
+
+*COVERAGE TYPE:* ${state.coverage==='family'?'Family Plan':'Individual'}
+
+*PRODUCT SELECTED:*
+${productInfo}
+
+*FAMILY MEMBERS:*
+${membersList}
+
+*MEDICAL DECLARATION:*
+1. Good health: ${mq1}
+2. Terminal illness diagnosed: ${mq2}
+3. Regular treatment/medication: ${mq3}
+4. Surgery/hospitalised in 2yrs: ${mq4}
+Extra notes: ${document.getElementById('med-extra').value||'None'}
+
+*PAYMENT:*
+Method: ${state.payMethod||'Not selected'}
+Frequency: ${state.payFreq||'Not selected'}
+
+_Submitted via FML Agent Registration Page_
+_Agent: Teudilous Shoko | +263 779 540 326_`;
+  window.open('https://wa.me/263779540326?text='+encodeURIComponent(msg),'_blank');
+  document.getElementById('success-box').style.display='block';
+  const btn=document.getElementById('submit-btn');
+  btn.textContent='✅ Registration Submitted!';
+  btn.style.background='#16a34a';
+  document.getElementById('success-box').scrollIntoView({behavior:'smooth'});
+}
+
+// ─── SLIDER INIT ──────────────────────────────────────────
+document.getElementById('sum-slider').addEventListener('input',function(){
+  document.getElementById('sum-display').textContent='$'+parseInt(this.value).toLocaleString();
+  calcCashPremium();
+});
+</script>
+</body>
+</html>
